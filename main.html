@@ -3,58 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <html data-theme="dark"></html>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src='script.js'></script>
+  <title>Mathis</title>
+
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-left">
-        <span class="nav-name">Mathis</span>
-      </div>
-      <div class="nav-right">
-        <ul>
-          <li><a href="#pictures">pictures</a></li>
-          <li><a href="#texts">texts</a></li>
-          <li><a href="#sozials">sozials</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <div class="slideshow-container fade">
-    <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="forward" onclick="plusSlides(1)">&#10095;</a>
-    
-    <!-- Full images with numbers and message Info -->
-    <div class="Containers">
-      <div class="MessageInfo">1 / 3</div>
-      <img src="assets/pictures/horizontal/amsterdam_at_night_ho.jpg" style="width:100%">
-      <div class="Info">First caption</div>
-    </div>
-  
-    <div class="Containers">
-      <div class="MessageInfo">2 / 3</div>
-      <img src="assets/pictures/horizontal/flowing_clouds_ho.jpg" style="width:100%">
-      <div class="Info">Second Caption</div>
-    </div>
-  
-    <div class="Containers">
-      <div class="MessageInfo">3 / 3</div>
-      <img src="assets/pictures/horizontal/group_of_couds_ver.jpg" style="width:100%">
-      <div class="Info">Third Caption</div>
-    </div>
-  
-    <!-- Back and forward buttons -->
-    <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+  <div class="navbar">
+    <a href="https://open.spotify.com/user/zockermathisyt">spotify</a>
+    <a href="#stories">stories</a>
+    <a href="https://www.instagram.com/matty.btw/" id="mathis">Mathis</a>
+    <a href="#pictures">pictures</a>
+    <a href="https://github.com/MathisTRD/Portfolio"> code </a>
   </div>
-  <br>
-  
 
-  
 
+  <div class="story" id="#stories">
+  
+    <h1>Stories</h1>
+
+  <div class="story-grid">
+
+      <div class="story-box">
+        <h2>Titel der Geschichte 1</h2>
+        <p>Kleine Vorschau der Geschichte 1...</p>
+        <p>Details der Geschichte 1 Lorem ipsum dolor sit amet...</p>
+      </div>
+
+      <div class="story-box">
+        <h2>Titel der Geschichte 1</h2>
+        <p>Kleine Vorschau der Geschichte 1...</p>
+        <p>Details der Geschichte 1 Lorem ipsum dolor sit amet...</p>
+      </div>
+
+      <div class="story-box">
+        <h2>Titel der Geschichte 1</h2>
+        <p>Kleine Vorschau der Geschichte 1...</p>
+        <p>Details der Geschichte 1 Lorem ipsum dolor sit amet...</p>
+      </div>
+
+      <div class="story-box">
+        <h2>Titel der Geschichte 1</h2>
+        <p>Kleine Vorschau der Geschichte 1...</p>
+        <p>Details der Geschichte 1 Lorem ipsum dolor sit amet...</p>
+      </div>
+
+      <div class="story-box">
+        <h2>Titel der Geschichte 1</h2>
+        <p>Kleine Vorschau der Geschichte 1...</p>
+        <p>Details der Geschichte 1 Lorem ipsum dolor sit amet...</p>
+      </div>
+
+      <div class="story-box">
+        <h2>Titel der Geschichte 1</h2>
+        <p>Kleine Vorschau der Geschichte 1...</p>
+        <p>Details der Geschichte 1 Lorem ipsum dolor sit amet...</p>
+      </div>
+
+
+    </div>
+    <div class="expanded-overlay"></div>
+    <div class="expanded-box">
+      <span class="close-btn">X</span>
+      <div class="expanded-content"></div>
+    </div>
+</div>
+
+
+  <script src='script.js'></script>
 </body>
 </html>

@@ -1,65 +1,145 @@
-
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 10px;
-  position: absolute;
-  margin: auto;
-  
+:root{
+  --color-dark:rgb(47, 62, 63);
+  --color-light: rgb(72, 104, 106);
+  --color-white: rgb(255, 255, 255);
 }
 
 
-
-/* Place the "forward button" to the right */
-.forward {
-  right: 0;
-  border-radius: 4px 0 0 4px;
+body, ul {
+  margin: 0;
+  padding: 0;
 }
 
-/*when the user hovers,add a black background with some little opacity */
-.Back:hover, .forward:hover {
-  background-color: rgba(0,0,0,0.8);
-}
+/* Navigation bar styles */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:space-evenly;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-dark);
+  padding: 2%;
 
-/* Caption Info */
-.Info {
-  color: #e3e3e3;
-  font-size: 16px;
-  padding: 10px 14px;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
+}
+#mathis{
+  font-size: 6em;
+}
+/* Navigation links */
+.navbar a {
+  float: middle;
+  color: var(--color-white);
   text-align: center;
+  padding: 16px 16px;
+  transition: color 0.3s;
+  border-radius: 5%;
+  border-color: var(--color-white);
+  text-decoration: none;
+  font-size: 2em;
 }
 
-/* Worknumbering (1/3 etc) */
-.MessageInfo {
-  color: #f2f2f3;
-  font-size: 14px;
-  padding: 10px 14px;
-  position: absolute;
+/* Change color on hover */
+.navbar a:hover {
+  background-color: var(--color-light);
+  color: var(--color-white);
+}
+  
+.story h1{
+  font: optional;
+  text-align: center;
+  color: var(--color-dark);
+  font-size: 6em;
+
+
+}
+.story-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row ;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 20px;
+  justify-content: center;
+}
+
+.story-box {
+  padding: 20px;
+  width: 30%;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border-radius: 10px;
+}
+
+.story-box:hover {
+  transform: scale(1.05);
+}
+.story-box.active {
+  width: 100%;
+  cursor: default;
+  transform: none;
+}
+
+/* Add a separate style for the expanded box */
+.expanded-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: var(--color-white);
+  padding: 40px;
+  max-width: 80%;
+}
+
+/* Add blurry background for expanded box */
+.expanded-overlay {
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+  display: none;
 }
 
-
-.enable, .dots:hover {
-  background-color: #717161;
+.expanded-overlay.active {
+  display: block;
 }
 
-/* Faint animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.4s;
-  animation-name: fade;
-  animation-duration: 1.4s;
+.expanded-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .5}
-  to {opacity: 2}
+.expanded-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  background-color: var(--color-dark);
+  color: white;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 4%;
+
 }
 
-@keyframes fade {
-  from {opacity: .5}
-  to {opacity: 2}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
