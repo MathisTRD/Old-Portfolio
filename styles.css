@@ -5,12 +5,7 @@
 }
 
 
-body, ul {
-  margin: 0;
-  padding: 0;
-}
-
-/* Navigation bar styles */
+/* NAVBAR SECTION */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -19,8 +14,7 @@ body, ul {
   align-items: center;
   overflow: hidden;
   background-color: var(--color-dark);
-  padding: 2%;
-
+  width: 100%;
 }
 #mathis{
   font-size: 6em;
@@ -37,13 +31,14 @@ body, ul {
   text-decoration: none;
   font-size: 2em;
 }
-
 /* Change color on hover */
 .navbar a:hover {
   background-color: var(--color-light);
   color: var(--color-white);
 }
-  
+
+
+/* STORY  SECTION */
 .story h1{
   font: optional;
   text-align: center;
@@ -52,6 +47,7 @@ body, ul {
 
 
 }
+/* stary cards alignment */
 .story-grid {
   display: flex;
   flex-wrap: wrap;
@@ -61,7 +57,7 @@ body, ul {
   margin: 20px;
   justify-content: center;
 }
-
+/* individual story cards */
 .story-box {
   padding: 20px;
   width: 30%;
@@ -71,7 +67,6 @@ body, ul {
   color: var(--color-white);
   border-radius: 10px;
 }
-
 .story-box:hover {
   transform: scale(1.05);
 }
@@ -98,26 +93,16 @@ body, ul {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 2;
-  display: none;
+  display: none;  
 }
 
 .expanded-overlay.active {
   display: block;
-}
-
-.expanded-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
 }
 
 .expanded-box {
