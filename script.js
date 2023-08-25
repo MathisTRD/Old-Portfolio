@@ -70,18 +70,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    expandedOverlay.style.display = 'none';
-    expandedBox.style.display = 'none';
-    document.body.style.overflow = 'auto';
 
-    storyBoxes.forEach((box) => {
-      const detail = box.querySelector('.detail');
-      const preview = box.querySelector('.preview');
-
-      // Reset the display of .preview and .detail in all story boxes
-      detail.style.display = 'none';
-      preview.style.display = 'block';
-    });
-  });
 });
