@@ -3,6 +3,56 @@ document.addEventListener("DOMContentLoaded", function () {
   const expandedOverlay = document.querySelector('.expanded-overlay');
   const expandedBox = document.querySelector('.expanded-box');
   const expandedContent = document.querySelector('.expanded-content');
+  const prevArrow = document.querySelectorAll('.prev-arrow');
+  const nextArrow = document.querySelectorAll('.next-arrow');
+
+  let currentIndex = 0;
+
+  const updateCarousel = () => {
+    storyBoxes.forEach((box, index) => {
+      if (window.innerWidth <= 866) {
+        const endRange = (currentIndex + 2) % storyBoxes.length;
+        const startRange = (endRange - 2 + storyBoxes.length) % storyBoxes.length;
+  
+        if (startRange <= endRange) {
+          if (index >= startRange && index <= endRange) {
+            box.style.display = 'block';
+          } else {
+            box.style.display = 'none';
+          }
+        } else {
+          if (index >= startRange || index <= endRange) {
+            box.style.display = 'block';
+          } else {
+            box.style.display = 'none';
+          }
+        }
+      } else {
+        box.style.display = 'block';
+      }
+    });
+  };
+  
+
+  nextArrow.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + storyBoxes.length) % storyBoxes.length;
+      updateCarousel();
+    });
+  });
+  
+  prevArrow.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % storyBoxes.length;
+      updateCarousel();
+    });
+  });
+
+  // Initialisieren
+  updateCarousel();
+
+  // Event Listener für Fenstergrößenänderungen
+  window.addEventListener('resize', updateCarousel);
 
   // Loop through storyBoxes and fetch JSON data for each story
   storyBoxes.forEach((box, index) => {
