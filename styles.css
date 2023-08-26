@@ -219,7 +219,7 @@ body {
 
 @media (max-width: 866px) {
 
-  .story-box:nth-child(n+4){
+  .story-box:nth-child(n+5){
     display: none;
   }
 

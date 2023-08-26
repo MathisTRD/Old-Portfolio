@@ -7,46 +7,48 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextArrow = document.querySelectorAll('.next-arrow');
 
   let currentIndex = 0;
+  let shuffledIndices = Array.from({ length: storyBoxes.length }, (_, i) => i);
+  shuffleArray(shuffledIndices);
+
+  
 
   const updateCarousel = () => {
     storyBoxes.forEach((box, index) => {
       if (window.innerWidth <= 866) {
-        const endRange = (currentIndex + 2) % storyBoxes.length;
-        const startRange = (endRange - 2 + storyBoxes.length) % storyBoxes.length;
-  
-        if (startRange <= endRange) {
-          if (index >= startRange && index <= endRange) {
-            box.style.display = 'block';
-          } else {
-            box.style.display = 'none';
-          }
+        if (
+          shuffledIndices[currentIndex] === index ||
+          (currentIndex + 1 < shuffledIndices.length && shuffledIndices[currentIndex + 1] === index)
+        ) {
+          box.style.display = 'block';
         } else {
-          if (index >= startRange || index <= endRange) {
-            box.style.display = 'block';
-          } else {
-            box.style.display = 'none';
-          }
+          box.style.display = 'none';
         }
       } else {
         box.style.display = 'block';
       }
     });
+  
+    // If there's only one box displayed, move to the next box if available
+    if (window.innerWidth <= 866 && currentIndex + 1 < shuffledIndices.length &&
+        shuffledIndices[currentIndex] === shuffledIndices[currentIndex + 1]) {
+      currentIndex = (currentIndex + 1) % shuffledIndices.length;
+      updateCarousel();
+    }
   };
-  
 
-  prevArrow.forEach((arrow) => {
-    arrow.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + storyBoxes.length) % storyBoxes.length;
-      updateCarousel();
+    prevArrow.forEach((arrow) => {
+      arrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 2 + storyBoxes.length) % storyBoxes.length;
+        updateCarousel();
+      });
     });
-  });
-  
-  nextArrow.forEach((arrow) => {
-    arrow.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % storyBoxes.length;
-      updateCarousel();
+
+    nextArrow.forEach((arrow) => {
+      arrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 2) % storyBoxes.length;
+        updateCarousel();
+      });
     });
-  });
 
   // Initialisieren
   updateCarousel();
@@ -116,4 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
       preview.style.display = 'block';
     });
   });
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 });
