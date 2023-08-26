@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   
 
-  nextArrow.forEach((arrow) => {
+  prevArrow.forEach((arrow) => {
     arrow.addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + storyBoxes.length) % storyBoxes.length;
       updateCarousel();
     });
   });
   
-  prevArrow.forEach((arrow) => {
+  nextArrow.forEach((arrow) => {
     arrow.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % storyBoxes.length;
       updateCarousel();
