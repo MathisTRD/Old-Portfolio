@@ -211,8 +211,6 @@ body {
     width: 7em;
   }
 
- 
-
   .navbar a:hover {
     background-color: var(--color-dark);
   }
@@ -223,7 +221,7 @@ body {
   }
 
   .story-box {
-    width: 100%;
+    width: 85%;
   }
 
   .navbar {
