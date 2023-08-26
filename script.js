@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const expandedOverlay = document.querySelector('.expanded-overlay');
   const expandedBox = document.querySelector('.expanded-box');
   const expandedContent = document.querySelector('.expanded-content');
-  const closeBtn = document.querySelector('.close-btn');
 
   // Loop through storyBoxes and fetch JSON data for each story
   storyBoxes.forEach((box, index) => {
@@ -15,12 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const detailElement = box.querySelector('.detail');
   
         titleElement.textContent = data.title;
-        previewElement.innerText = data.preview; // Use innerText to display text content
-        detailElement.innerText = data.detail;   // Use innerText to display text content
+        previewElement.innerText = data.preview;
+        detailElement.innerText = data.detail;
       })
       .catch(error => console.error('Error loading JSON data:', error));
   });
-  
 
   storyBoxes.forEach((box) => {
     box.addEventListener('click', () => {
@@ -41,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Toggle the display of .preview and .detail in the cloned card
       const previewClone = contentClone.querySelector('.preview');
       const detailClone = contentClone.querySelector('.detail');
-
       previewClone.style.display = 'none';
       detailClone.style.display = 'block';
 
@@ -69,6 +66,4 @@ document.addEventListener("DOMContentLoaded", function () {
       preview.style.display = 'block';
     });
   });
-
-
 });
