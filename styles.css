@@ -8,6 +8,7 @@
   --scrollbar-track-color: #f8f9fa00; /* Adjust as needed */
   font-family: 'Open Sans', sans-serif;
 }
+
 body {
   scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
   scrollbar-width: thin;
